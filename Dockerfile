@@ -1,8 +1,12 @@
 FROM tutum/lamp:latest
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php5-gd
 MAINTAINER Equipe Webtop <webtop@webadeo.net>
 RUN rm -fr /app && mkdir -p /app
 ADD testlink.sh /testlink.sh
 RUN chmod 755 /testlink.sh
+ADD clean.sh /clean.sh
+RUN chmod 755 /clean.sh
 ADD import_mysql_testlink_data.sh /import_mysql_testlink_data.sh
 RUN chmod 755 /import_mysql_testlink_data.sh
 COPY . /app
