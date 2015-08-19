@@ -12,8 +12,8 @@ RUN chmod 755 /testlink.sh /clean.sh /import_mysql_testlink_data.sh
 
 COPY . /app
 WORKDIR /app
-RUN tar -zxvf testlink-1.9.11.tar.gz && rm -f testlink-1.9.11.tar.gz
-RUN mv testlink-1.9.11 testlink && rm -fr testlink-1.9.11
+RUN tar -zxvf testlink-1.9.13.tar.gz && rm -f testlink-1.9.13.tar.gz
+RUN mv testlink-1.9.13 testlink && rm -fr testlink-1.9.13
 RUN mkdir -p /var/testlink/logs
 RUN mkdir -p /var/testlink/upload_area
 RUN chmod 777 /var/testlink/logs /var/testlink/upload_area /var/lib/php5 testlink/gui/templates_c
